@@ -1,0 +1,26 @@
+The workflow is broken into four steps:
+Step 1: Data Preparation
+
+    Historical price data for PPH ETF is cleaned and converted into numeric form.
+    Missing or invalid values are dropped.
+
+Step 2: ARIMA Model for Forecasting
+
+    ARIMA (Autoregressive Integrated Moving Average):
+        AR (Autoregression): Models dependencies on lagged observations.
+        I (Integration): Differencing is applied to ensure stationarity.
+        MA (Moving Average): Models dependencies on lagged forecast errors.
+    The auto_arima function is used to identify the optimal model parameters (p,d,q)(p,d,q) by minimizing the Akaike Information Criterion (AIC).
+
+Step 3: Rolling Window Framework
+
+    The dataset is split into training (in-sample) and testing (out-of-sample) sets.
+    The ARIMA model is retrained at each time step, and forecasts are generated for the next day.
+    This iterative approach simulates real-world market conditions and ensures robust evaluation.
+
+Step 4: Trading Strategy
+
+    A Take-Profit and Stop-Loss mechanism is implemented using the Average True Range (ATR):
+        Take-Profit = 2×ATR2×ATR
+        Stop-Loss = 1.5×ATR1.5×ATR
+    The strategy aims for a Risk-Reward Ratio (RRR) of 0.75, balancing potential profits and losses.
