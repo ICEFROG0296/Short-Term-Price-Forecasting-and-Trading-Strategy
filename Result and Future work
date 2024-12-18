@@ -1,0 +1,25 @@
+Model Performance:
+
+    The ARIMA model parameters were optimized to (p=0,d=1,q=0)(p=0,d=1,q=0).
+    The model performed well visually, with forecasts closely following actual prices.
+    Residuals were symmetrically distributed with no obvious systematic errors.
+
+Take-Profit and Stop-Loss:
+
+    ATR-based thresholds enabled disciplined profit-taking and risk management.
+
+Prediction Accuracy:
+
+    The ARIMA model correctly forecasted price direction approximately 50% of the time.
+    Despite the modest accuracy, the strategy leveraged the upward trend in PPH ETF prices to remain profitable over time.
+
+Model Limitations:
+
+    ARIMA assumes linearity and stationarity, which may not fully capture complex market behaviors.
+    The strategy does not account for transaction costs or market slippage.
+
+Proposed Improvements:
+
+    Include macroeconomic indicators or sector-specific data as exogenous features.
+    Explore advanced models such as LSTM or Transformers to capture non-linear relationships.
+    Account for realistic trading conditions like transaction costs and liquidity constraints.
